@@ -1,4 +1,4 @@
-package users.api.spec;
+package movies.api.spec;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
