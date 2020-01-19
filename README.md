@@ -3,7 +3,7 @@
 ## Crüll Loris, Selim Stéphane
 
 ### How to build, run and test the application
-To build and run our application, we've setup a shell script execute_project_rest.sh.
+To build and run our application, we've setup a shell script execute_project_rest.sh
 ### Functionnal aspects
 ### [Structure](docs/Structure.md)
 ### [Model](docs/Model.md)
