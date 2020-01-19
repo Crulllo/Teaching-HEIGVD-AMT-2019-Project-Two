@@ -1,6 +1,6 @@
 ## Filters
 
-## Cucumber Tests (doesn't work)
+## Cucumber Tests (WIP, Still some tests that don't pass)
 ### actor scenarios
 Background : there is an application server and we have a jwt token<br>
 Scenarios : creating a new actor and deleting it after, creating a new actor and updating it after, creating a new actor and looking for it after, getting all actors
