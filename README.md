@@ -3,8 +3,8 @@
 ## Crüll Loris, Selim Stéphane
 
 ### What
-### [Model](docs/Model.md)
 ### [Structure](docs/Structure.md)
+### [Model](docs/Model.md)
 ### [Context](docs/Context.md)
 
 ### How
