@@ -14,7 +14,6 @@ public class DeletionSteps {
         this.moviesApi = this.environment.getMoviesApi();
     }
 
-
     @When("^I DELETE it in the /movies/moviesId endpoint$")
     public void iDELETEItInTheMoviesMoviesIdEndpoint() {
         try {

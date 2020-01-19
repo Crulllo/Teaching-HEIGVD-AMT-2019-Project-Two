@@ -17,7 +17,6 @@ public class CreationSteps {
     private static final MediaType JSON
             = MediaType.get("application/json; charset=utf-8");
 
-
     private Environment environment;
     private ActorsApi actorsApi;
 
@@ -67,10 +66,5 @@ public class CreationSteps {
             this.environment.setLastApiException(e);
             this.environment.setLastStatusCode(this.environment.getLastApiException().getCode());
         }
-    }
-
-    @Then("^I receive a (\\d+) status code$")
-    public void iReceiveAStatusCode(int expectedCode) {
-        assertEquals(expectedCode, this.environment.getLastStatusCode());
     }
 }

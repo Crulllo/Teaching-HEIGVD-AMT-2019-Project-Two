@@ -12,8 +12,7 @@ import okhttp3.*;
 import users.api.spec.helpers.Environment;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.net.UnknownHostException;
 
 import static org.junit.Assert.*;
 
@@ -22,7 +21,6 @@ public class CreationSteps {
     // To format the request body we send to the authentications endpoint in order to authenticate the user.
     private static final MediaType JSON
             = MediaType.get("application/json; charset=utf-8");
-
 
     private Environment environment;
     private MoviesApi moviesApi;
@@ -43,7 +41,7 @@ public class CreationSteps {
     }
 
     @Given("^I have a jwt token$")
-    public void iHaveAJwtToken() throws ApiException {
+    public void iHaveAJwtToken() throws ApiException, UnknownHostException {
         RequestBody body = RequestBody.create("{\"username\": \"user1\", \"password\":\"password\"}", JSON);
         Request request = new Request.Builder()
                 .url("http://localhost:6060/api/authentications/")
@@ -57,7 +55,6 @@ public class CreationSteps {
         } catch (NullPointerException | IOException e) {
             throw new ApiException("Could not retrieve jwt token from the authentications endpoint");
         }
-
     }
 
     @Given("^I have a valid movie payload$")
