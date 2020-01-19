@@ -1,6 +1,0 @@
-### [Context](Context.md)
-### [Model](Model.md)
-### [PerformanceTests](PerformanceTests.md)
-### [Structure](Structure.md)
-### [Movies](implementation/api-movies-implementation/implementation-movies.md)
-### [Users](implementation/api-users-implementation/implementation-users.md)
