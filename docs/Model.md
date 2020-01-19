@@ -2,7 +2,7 @@
 
 ## api-user
 ![user](https://github.com/Crulllo/Teaching-HEIGVD-AMT-2019-Project-Two/blob/master/docs/api-user.png)<br>
-A user has a username used to identify him, a password used to access his account and an email. He also has a full name composed by his firstname and lastname.
+A user has a username used to identify him, a password used to access his account and an email. He also has a full name composed by his firstname and lastname. He can be an admin and if so, he can block / unblock others users.
 
 ## api-movie
 ![movie](https://github.com/Crulllo/Teaching-HEIGVD-AMT-2019-Project-Two/blob/master/docs/api-movie.png)<br>
