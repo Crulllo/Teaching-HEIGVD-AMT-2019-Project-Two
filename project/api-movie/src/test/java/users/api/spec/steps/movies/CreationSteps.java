@@ -35,13 +35,14 @@ public class CreationSteps {
 
         this.gson = new Gson();
     }
+
     @Given("^there is an application server$")
     public void there_is_a_Users_server() throws Throwable {
         assertNotNull(moviesApi);
     }
 
     @Given("^I have a jwt token$")
-    public void iHaveAJwtToken() throws ApiException, UnknownHostException {
+    public void iHaveAJwtToken() throws ApiException {
         RequestBody body = RequestBody.create("{\"username\": \"user1\", \"password\":\"password\"}", JSON);
         Request request = new Request.Builder()
                 .url("http://localhost:6060/api/authentications/")
