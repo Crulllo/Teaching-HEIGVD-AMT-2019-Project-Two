@@ -2,6 +2,8 @@
 
 ## Crüll Loris, Selim Stéphane
 
+### How to build, run and test the application
+
 ### What
 ### [Structure](docs/Structure.md)
 ### [Model](docs/Model.md)
