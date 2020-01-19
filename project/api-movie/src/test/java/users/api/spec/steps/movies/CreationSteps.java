@@ -23,7 +23,6 @@ public class CreationSteps {
     private static final MediaType JSON
             = MediaType.get("application/json; charset=utf-8");
 
-
     private Environment environment;
     private MoviesApi moviesApi;
 
@@ -60,6 +59,21 @@ public class CreationSteps {
     public void iPOSTItToTheMoviesEndpoint() {
         try {
             this.environment.setLastApiResponse(this.moviesApi.createMovieWithHttpInfo(this.environment.getMovie()));
+            this.environment.setLastApiCallThrewException(false);
+            this.environment.setLastApiException(null);
+            this.environment.setLastStatusCode(this.environment.getLastApiResponse().getStatusCode());
+        } catch (ApiException e) {
+            this.environment.setLastApiResponse(null);
+            this.environment.setLastApiCallThrewException(true);
+            this.environment.setLastApiException(e);
+            this.environment.setLastStatusCode(this.environment.getLastApiException().getCode());
+        }
+    }
+
+    @When("^I UPDATE it in the /movies/moviesId endpoint$")
+    public void iUPDATEItInTheMoviesMoviesIdEndpoint() {
+        try {
+            this.environment.setLastApiResponse(this.moviesApi.updateMovieWithHttpInfo(this.environment.retrieveLastCreatedResourceId(), this.environment.getMovie()));
             this.environment.setLastApiCallThrewException(false);
             this.environment.setLastApiException(null);
             this.environment.setLastStatusCode(this.environment.getLastApiResponse().getStatusCode());
