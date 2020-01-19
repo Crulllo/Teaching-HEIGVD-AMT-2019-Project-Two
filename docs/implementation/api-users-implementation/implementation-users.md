@@ -19,11 +19,11 @@ We have 2 interceptors to distinguish between the Admin and the regular user. Gi
 
 ## Cucumber Tests
 ### admin scenarios
-Background : there is a Users server, an admin and an admin token
+Background : there is a Users server, an admin and an admin token<br>
 Scenarios : getting an admin token and getting all users
 ### creation scenarios
-Background : there is a Users server
+Background : there is a Users server<br>
 Scenarios : creating a user and failling when no username or password provided
 ### user scenarios
-Background : there is a valid user payload, we post it and then we post his credentials to get a jwt token
+Background : there is a valid user payload, we post it and then we post his credentials to get a jwt token<br>
 Scenarios : updating a user profile
