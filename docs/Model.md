@@ -15,5 +15,5 @@ Data transfer objects are the data we transfer in our apis. They only contain th
 
 For example, the User DTO has only the username, firstname, lastname email and hashed password but we don't need to know that a user is admin or blocked, these are for implementation purposes.
 
-## Spring data Repository
+## Spring data Repository & Hibernate
 A quick note on the relationship: we don't use a many to many relationship between movies and actors. We preferred a oneToMany from each side so that the role can have its own id, and that way we don't have the limitation that an actor can only have one role in a fil.
