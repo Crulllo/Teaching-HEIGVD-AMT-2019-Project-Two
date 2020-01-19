@@ -16,12 +16,4 @@ Feature: Creation of users
     Then I receive a 200 status code
     Then I receive a jwt token
 
-  #Scenario: change password
-    #Given I have authenticated the user and I have a jwt token and a new password
-    #When I PATCH it to the /passwords endpoint
-    #Then I receive a 200 status code
-    #When I POST his credentials to the /authentications endpoint
-    #Then I receive a 200 status code
-    #Then I receive a jwt token
-
 

@@ -65,21 +65,6 @@ public class CreationSteps {
 
     }
 
-    @When("^I PATCH it to the /passwords endpoint$")
-    public void iPATCHItToThePasswordsEndpoint() {
-        try {
-            this.environment.setLastApiResponse(api.changePasswordWithHttpInfo(environment.getTestUser().getPassword()));
-            this.environment.setLastApiCallThrewException(false);
-            this.environment.setLastApiException(null);
-            this.environment.setLastStatusCode(this.environment.getLastApiResponse().getStatusCode());
-        } catch (ApiException e) {
-            this.environment.setLastApiResponse(null);
-            this.environment.setLastApiCallThrewException(true);
-            this.environment.setLastApiException(e);
-            this.environment.setLastStatusCode(this.environment.getLastApiException().getCode());
-        }
-    }
-
     @Then("^I receive a (\\d+) status code$")
     public void i_receive_a_status_code(int expectedCode) throws Throwable {
         assertEquals(expectedCode, this.environment.getLastStatusCode());
