@@ -1,5 +1,3 @@
-## Filters
-
 ## Cucumber Tests (WIP, Still some tests that don't pass)
 ### actor scenarios
 Background : there is an application server and we have a jwt token<br>
