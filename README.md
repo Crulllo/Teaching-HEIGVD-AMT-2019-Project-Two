@@ -4,14 +4,16 @@
 
 ### How to build, run and test the application
 
-### What
+### Functionnal aspects
 ### [Structure](docs/Structure.md)
 ### [Model](docs/Model.md)
 ### [Context](docs/Context.md)
 
-### How
+### Implementation
 ### [Users](docs/implementation/api-users-implementation/implementation-users.md)
 ### [Movies](docs/implementation/api-movies-implementation/implementation-movies.md)
 
 ### Testing
 ### [PerformanceTests](docs/PerformanceTests.md)
+
+### Known bugs and limitations
