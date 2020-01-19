@@ -5,6 +5,7 @@ import movies.ApiResponse;
 import movies.api.ActorsApi;
 import movies.api.MoviesApi;
 import movies.api.RolesApi;
+import movies.api.dto.Actor;
 import movies.api.dto.Movie;
 import okhttp3.OkHttpClient;
 
@@ -28,6 +29,7 @@ public class Environment {
     private String lastToken;
 
     private Movie testMovie;
+    private Actor testActor;
 
     public Environment() throws IOException {
         Properties properties = new Properties();
@@ -103,6 +105,14 @@ public class Environment {
 
     public void setTestMovie(Movie testMovie) {
         this.testMovie = testMovie;
+    }
+
+    public Actor getActor() {
+        return testActor;
+    }
+
+    public void setTestActor(Actor testActor) {
+        this.testActor = testActor;
     }
 
     public Long retrieveLastCreatedResourceId() {
