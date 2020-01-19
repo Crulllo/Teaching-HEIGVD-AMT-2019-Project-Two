@@ -1,11 +1,13 @@
-package users.api.spec.steps.actors;
+package users.api.spec.steps.roles;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import movies.ApiException;
-import movies.api.ActorsApi;
+import movies.api.RolesApi;
 import movies.api.dto.Actor;
+import movies.api.dto.Movie;
+import movies.api.dto.Role;
 import okhttp3.*;
 import users.api.spec.helpers.Environment;
 
@@ -18,45 +20,38 @@ public class CreationSteps {
             = MediaType.get("application/json; charset=utf-8");
 
     private Environment environment;
-    private ActorsApi actorsApi;
+    private RolesApi rolesApi;
 
     private OkHttpClient client;
 
-    Actor actor;
+    Role role;
 
     public CreationSteps(Environment environment) {
         this.environment = environment;
-        this.actorsApi = this.environment.getActorsApi();
+        this.rolesApi = this.environment.getRolesApi();
         this.client = this.environment.getHttpClient();
     }
 
-    @Given("^I have a valid actor payload$")
-    public void iHaveAValidActorPayload() {
+    @Given("^I have a valid role payload$")
+    public void iHaveAValidRolePayload() {
+        this.environment.setTestRole(new Role());
+        this.environment.getRole().setRolename("principal");
+
+        this.environment.setTestMovie(new Movie());
+        this.environment.getMovie().setTitle("The Movie");
+        this.environment.getRole().setMovieId(this.environment.retrieveLastCreatedResourceId());
+
         this.environment.setTestActor(new Actor());
         this.environment.getActor().setFirstname("Bradley");
         this.environment.getActor().setLastname("Pitts");
         this.environment.getActor().setExpertise(Actor.ExpertiseEnum.FILM);
+        this.environment.getRole().setActorId(this.environment.retrieveLastCreatedResourceId());
     }
 
-    @When("^I POST it to the /actors endpoint$")
-    public void iPOSTItToTheMoviesEndpoint() {
+    @When("^I POST it to the /roles endpoint$")
+    public void iPOSTItToTheRolesEndpoint() {
         try {
-            this.environment.setLastApiResponse(this.actorsApi.createActorWithHttpInfo(this.actor));
-            this.environment.setLastApiCallThrewException(false);
-            this.environment.setLastApiException(null);
-            this.environment.setLastStatusCode(this.environment.getLastApiResponse().getStatusCode());
-        } catch (ApiException e) {
-            this.environment.setLastApiResponse(null);
-            this.environment.setLastApiCallThrewException(true);
-            this.environment.setLastApiException(e);
-            this.environment.setLastStatusCode(this.environment.getLastApiException().getCode());
-        }
-    }
-
-    @When("^I UPDATE it in the /actors/actorsId endpoint$")
-    public void iUPDATEItInTheActorsActorsIdEndpoint() {
-        try {
-            this.environment.setLastApiResponse(this.actorsApi.updateActorWithHttpInfo(this.environment.retrieveLastCreatedResourceId(), this.environment.getActor()));
+            this.environment.setLastApiResponse(this.rolesApi.createRoleWithHttpInfo(this.role));
             this.environment.setLastApiCallThrewException(false);
             this.environment.setLastApiException(null);
             this.environment.setLastStatusCode(this.environment.getLastApiResponse().getStatusCode());
